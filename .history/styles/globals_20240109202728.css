@@ -1,0 +1,65 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #88effd;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates a 4-column layout */
+  gap: 10px; /* Sets the gap between grid items */
+  background-color: #80ced6; /* Calculator background color */
+  padding: 20px; /* Padding around the calculator */
+  max-width: 300px; /* Maximum width of the calculator */
+  margin: auto; /* Center the calculator */
+}
+
+.calculator-display,
+.calculator-grid,
+.calculator-operators {
+  display: contents; /* Use display: contents to allow child elements to use grid layout directly */
+}
+
+.calculator-button {
+  background-color: #fff; /* Button background color */
+  border: 2px solid #000; /* Button border */
+  font-size: 1rem; /* Button font size */
+  padding: 10px; /* Button padding */
+  cursor: pointer; /* Cursor pointer when hovering over buttons */
+}
+
+.calculator-display input {
+  grid-column: span 4; /* Display input spans all 4 columns */
+  padding: 10px; /* Padding for the input field */
+  font-size: 1rem; /* Font size for the input field */
+}
+
+/* Add styles for your result display here */
+.calculator-result {
+  grid-column: span 4; /* Result display spans all 4 columns */
+  /* Additional styling for the result display */
+}
+
+/* If you want to nest operators under the digits */
+.calculator-operators {
+  grid-column: span 4; /* Operator buttons span all 4 columns */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates a nested 4-column layout for operators */
+}
